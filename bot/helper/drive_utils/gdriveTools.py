@@ -541,7 +541,7 @@ class GoogleDriveHelper:
             for file in self.response[files]["files"]:
                 if file.get('mimeType') == self.__G_DRIVE_DIR_MIME_TYPE:
                     msg += f"🗂️<code>{file.get('name')}</code> <b>(folder)</b><br>" \
-                           f"<b><a href='https://drive.google.com/drive/folders/{file.get('id')}'>Drive Link</a></b>"
+                           f"<b><a href='https://drive.google.com/drive/folders/{file.get('id')}'>Drive Link test</a></b>"
                     if INDEX_URLS[index] is not None:
                         url_path = requests.utils.quote(f"{file.get('name')}")
                         url = f"{INDEX_URLS[index]}search?q={url_path}"
@@ -549,7 +549,7 @@ class GoogleDriveHelper:
                 else:
                     msg += f"📄<code>{file.get('name')}</code> <b>({get_readable_file_size(int(file.get('size', 0)))})" \
                            f"</b><br><b><a href='https://drive.google.com/uc?id={file.get('id')}" \
-                           f"&export=download'>Drive Link</a></b>"
+                           f"&export=download'>Drive Link test</a></b>"
                     if INDEX_URLS[index] is not None:
                         url_path = requests.utils.quote(f"{file.get('name')}")
                         url = f"{INDEX_URLS[index]}search?q={url_path}"
